@@ -12,9 +12,9 @@ This project features a simple and modern login/sign-up flow built with Flutter.
 
 ## Screenshots
 
-![Login Screen](/screenshots/login_screen.jpg)  
-![Confirmation Code Screen](/screenshots/confirmation_code.jpg)
-![Sign Up Screen](/screenshots/sign_up_screen.jpg)
+![Login Screen](login_ui/screenshots/login_screen.jpg)
+![Confirmation Code Screen](login_ui/screenshots/confirmation_code.jpg)
+![Sign Up Screen](login_ui/screenshots/sign_up_screen.jpg)
 
 ---
 
