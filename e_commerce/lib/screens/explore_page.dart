@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce/utils/product_card.dart';
+import 'package:e_commerce/utils/product_detail.dart';
 import 'package:flutter/material.dart';
 
 class ExplorePage extends StatefulWidget {
@@ -132,9 +133,17 @@ class _ExplorePageState extends State<ExplorePage> {
                   itemCount: _products.length,
                   itemBuilder: (context, index) {
                     final product = _products[index];
-                    return ProductCard(
-                        name: product['name'] ?? '',
-                        price: product['price'] ?? '');
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ProductDetail()));
+                      },
+                      child: ProductCard(
+                          name: product['name'] ?? '',
+                          price: product['price'] ?? ''),
+                    );
                   },
                 ),
               ),
