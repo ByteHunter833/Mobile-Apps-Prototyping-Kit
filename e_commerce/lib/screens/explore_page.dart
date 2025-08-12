@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:e_commerce/screens/cart_page.dart';
 import 'package:e_commerce/utils/product_card.dart';
 import 'package:e_commerce/utils/product_detail.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,22 @@ class _ExplorePageState extends State<ExplorePage> {
             icon: const Icon(Icons.favorite_border_outlined),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const CartPage(),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        const begin = Offset(1.0, 0.0);
+                        const end = Offset.zero;
+                        final tween = Tween(begin: begin, end: end);
+                        final offsetAnimation = animation.drive(tween);
+                        return SlideTransition(
+                            position: offsetAnimation, child: child);
+                      }));
+            },
             icon: Stack(
               clipBehavior: Clip.none,
               children: [
